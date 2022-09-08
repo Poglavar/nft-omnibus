@@ -13,7 +13,7 @@ interface NeonTextProps {
 const NeonText: React.FC<NeonTextProps> = ({textValue, marginBottom,fontSize})  => {
 
     return (
-        <Text marginBottom={marginBottom} textShadow={"0 0 1em #000"} fontWeight={"600"} fontSize={fontSize}>{textValue}</Text>
+        <Text  marginBottom={marginBottom} fontWeight={"600"} fontFamily={"Exo2"} textShadow={"0 0 0em #fff"} fontSize={fontSize}>{textValue}</Text>
     )
 };
 

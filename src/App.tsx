@@ -7,18 +7,18 @@ import './index.css';
 import "./fonts/Exo2/Exo2.ttf"
 import AirDropManagerOverview from "./Components/Screens/AirDropManagerOverview/AirDropManagerOverview";
 import AirDropManagerLanding from "./Components/Screens/AirDropManagerLanding/AirDropManagerLanding";
+import AirDropManagerInputForm from "./Components/Screens/AirDropManagerInputForm/AirDropManagerInputForm";
 
-
+// check for animate presence exitBeforeEnter initial={true} and why it's stumping the navigation when imported
 function App() {
     const location = useLocation();
     return (
         <Box>
-            <AnimatePresence exitBeforeEnter initial={true}>
-                    <Routes location={location} key={location.pathname}>
-                        <Route path={"/"} element={<AirDropManagerLanding/>}/>
-                        <Route path={"/airdrop-manager-overview"} element={<AirDropManagerOverview/>}/>
-                    </Routes>
-                </AnimatePresence>
+            <Routes location={location} key={location.pathname}>
+                <Route path={"/"} element={<AirDropManagerLanding/>}/>
+                <Route path={"/airdrop-manager-overview"} element={<AirDropManagerOverview/>}/>
+                <Route path={"/airdrop-manager-forms"} element={<AirDropManagerInputForm/>}/>
+            </Routes>
         </Box>
     );
 }

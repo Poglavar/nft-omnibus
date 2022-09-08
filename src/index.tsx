@@ -19,19 +19,16 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-// console.log("theme", theme);
-// console.log("heme.config.initialColorMode", theme.config.initialColorMode);
-
 root.render(
   // <React.StrictMode>
     <Provider store={store}>
         <QueryClientProvider client={queryClient}>
-            <BrowserRouter>
             <ChakraProvider theme={theme}>
                 <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+                <BrowserRouter>
                     <App/>
+                </BrowserRouter>
             </ChakraProvider>
-            </BrowserRouter>
             <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
     </Provider>

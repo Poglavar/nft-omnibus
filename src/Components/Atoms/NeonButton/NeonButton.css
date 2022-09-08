@@ -67,7 +67,7 @@ body {
 .neonButton:focus {
     outline: none;
 }
-
+/* skloniti poslednje dve plave senke na dugmetu na overview-u
 /* Animate neon flicker */
 @keyframes flicker {
 

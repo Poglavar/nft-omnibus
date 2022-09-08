@@ -1,6 +1,6 @@
 import {Icon, Box, keyframes} from "@chakra-ui/react";
 import * as React from "react";
-import {ParachuteWithCrateBlue, ParachuteWithCrateRed, ParachuteWithCratePurple, ParachuteWithCrateYellow, ParachuteWithCrateGreen} from "../../../Icons/Icon";
+import {ParachuteWithCrateBlue, ParachuteWithCrate, ParachuteWithCratePurple, ParachuteWithCrateYellow, ParachuteWithCrateGreen} from "../../../Icons/Icon";
 import {motion, useAnimation, useInView} from "framer-motion";
 import {useEffect, useRef} from "react";
 
@@ -19,7 +19,7 @@ const rotation = [["40deg", "-20deg", "40deg", "-20deg", "40deg", "10deg"]]
 const leftPosition = [50, width/2, width * 2/3, width*3/4, width*2/5, width/3, width/4, width*4/5];
 const delay = [0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5];
 const xPosition = [50, 200, 80, 250, 80, 230]
-const parachute = [<ParachuteWithCrateRed/>, <ParachuteWithCratePurple/>, <ParachuteWithCrateBlue/>, <ParachuteWithCrateYellow/>, <ParachuteWithCrateGreen/>]
+const parachute = [<ParachuteWithCrate/>, <ParachuteWithCratePurple/>, <ParachuteWithCrateBlue/>, <ParachuteWithCrateYellow/>, <ParachuteWithCrateGreen/>]
 const boxSize = [200, 100, 150, 20, 180]
 
 const FallingParachute: React.FC<FallingParachuteProps> = () => {
@@ -48,6 +48,7 @@ const FallingParachute: React.FC<FallingParachuteProps> = () => {
             ref={ref}
             boxSize={randomBoxSize}
             animate={{
+                opacity: [0.5, 1, 1, 1, 1, 1],
                 rotate: randomRotation,
                 x: xPosition,
                 y: [0, height / 4, height /2, height / 2 + height /4, height / 2 + height / 3, height + 200],
@@ -59,7 +60,6 @@ const FallingParachute: React.FC<FallingParachuteProps> = () => {
             }}
             position={"absolute"}
             zIndex={randomZIndex}
-            top={-200}
             left={randomLeftPosition}
         >
             {randomParachute}
